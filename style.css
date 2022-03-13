@@ -6808,7 +6808,7 @@ header.mobile-header .hamburger-menu-mobile svg.hamburger-menu-icon rect {
     top: 50%;
     transform: rotate(-90deg) translateX(0);
     font-size: 1.125vw;
-    color: rgba(0, 0, 0, 0.5);
+    color: #11f5ff;
 }
 @media screen and (min-aspect-ratio: 2500 / 1400) and (min-width: 1000px) {
     .footer-landing .copyright {
@@ -6828,7 +6828,7 @@ header.mobile-header .hamburger-menu-mobile svg.hamburger-menu-icon rect {
     }
 }
 .footer-landing .copyright .grey-text {
-    color: rgba(0, 0, 0, 0.3);
+    color: #fff;
     text-indent: 1.125vw;
     display: inline-block;
 }
