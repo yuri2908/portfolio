@@ -11,8 +11,16 @@
     <link href="favicon.png" rel="icon" type="image/png">
     <link href="style.css" rel="stylesheet">
   <style>
-
-
+  #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.fullpage-wrap {
+  background: rgba(0, 0, 0, 0.5);
+}
   @media only screen and (max-width: 480px) {
   h1.ng-scope {
     display:none !important;
@@ -3116,7 +3124,11 @@ button.c2157 svg {
 }
 </style></head>
   <body ng-controller="MainCtrl as main" ng-class="[$state.current.data.bodyClassName, main.bodyClassNames.join(' '), {'show-four-blocks-section': main.showFourBlocksSection, 'show-login-popup': main.showLogin, 'show-hamburger': main.showHamburger, 'show-connect-form': showConnectForm}]" class="ng-scope homepage-body loaded initial-animation">
-    <!-- uiView: --><div class="inner-page-wrap ng-scope" ui-view=""><div class="fullpage-wrap ng-scope">
+    <!-- uiView: -->
+	<video autoplay muted loop id="myVideo">
+  <source src="ocean.mp4" type="video/mp4">
+</video>
+	<div class="inner-page-wrap ng-scope" ui-view=""><div class="fullpage-wrap ng-scope">
    <header class="header">
   <div class="wrapper">
     <a ui-sref="index" class="logo" href="">
@@ -3207,7 +3219,6 @@ button.c2157 svg {
     <!-- ng-click="main.toggleLogin()" -->
   </div>
 </header>
-
   <!-- uiView: --><main ng-class="[$state.current.data.mainClassName]" ui-view="" class="ng-scope homepage"><slick infinite="false" arrows="false" responsive="[{breakpoint: 2000, settings: 'unslick'}, {breakpoint: 767}]" class="slick-example ng-scope ng-isolate-scope">
   <div>
       <img class="hero hero2 little-plus" src="hero.png" alt="Desain Kreasi">
@@ -3217,7 +3228,7 @@ button.c2157 svg {
       <img src="little-plus.png" alt="" class="hero little-plus">
     <!--<img src="/frontend/img/hero.png" alt="" class="hero">-->
   </div><div><section class="plan-description">
-    <!-- ngInclude: '/api/page_parts/fullpage-index?plan' --><h1 ng-include="'/api/page_parts/fullpage-index?plan'" class="yellow-text ng-scope" style="font-size:64px; color:;">Web Designer<br /><span class="yellow-text ng-scope" style="font-size:41px;">Desain Kreasi</span><sup class="ng-scope"> </sup>
+    <!-- ngInclude: '/api/page_parts/fullpage-index?plan' --><h1 ng-include="'/api/page_parts/fullpage-index?plan'" class="ng-scope" style="font-size:64px;color:#fff;">Web Designer<br /><span class="ng-scope" style="font-size:41px;">Desain Kreasi</span><sup class="ng-scope"> </sup>
 <span class="ng-scope" style="font-size:34px; color:#11f5ff">이태용</span>
 </h1>
     <!-- <h1>Интернет <nobr>1 /с</nobr> за <span class="yellow-text">400</span><sup> Руб</sup></h1> -->
@@ -4157,10 +4168,26 @@ button.c2157 svg {
 
 
 </div>
-    
-    
-    <noscript><iframe src="index_1.html" style="display: none; visibility: hidden" width="0" height="0"></iframe></noscript>
-  
+
+<script>
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
   <script>
 $(window).scroll(function() {
     var height = $(document).height() - $(window).height();
